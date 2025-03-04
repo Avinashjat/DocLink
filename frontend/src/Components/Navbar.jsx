@@ -54,6 +54,21 @@ function Navbar() {
             </div>
             : <button onClick={()=>{navigate('/login')}} className="hidden bg-primary text-white md:block py-3 px-9 rounded-full  font-normal"> create account </button>
           }
+
+          <img onClick={()=>setshowMenu(true)} className="w-6 md:hidden" src={assets.menu_icon} alt="" />
+
+          <div className={` ${showMenu ? 'fixed w-full ' : 'h-0 w-0'} md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all`}>
+            <div className="flex items-center justify-between px-5 py-6">
+              <img className="w-36" src={assets.logo} alt="" />
+              <img className="w-7" onClick={()=>setshowMenu(false)} src={assets.cross_icon} alt="" />
+            </div>
+            <ul className="flex flex-col items-center gap-3 mt-5 px-5 text-lg font-medium">
+                <NavLink  onClick={()=> setshowMenu(false)} to='/'> <p className='px-4 py-2 rounded inline-block'> Home</p></NavLink>
+                <NavLink  onClick={()=> setshowMenu(false)} to='/doctor'><p className='px-4 py-2 rounded inline-block'>All Doctors</p></NavLink>
+                <NavLink  onClick={()=> setshowMenu(false)} to='/about'><p className='px-4 py-2 rounded inline-block'>About</p></NavLink>
+                <NavLink  onClick={()=> setshowMenu(false)} to='/contact'><p className='px-4 py-2 rounded inline-block'>Contact</p></NavLink>
+            </ul>
+          </div>
             
           </div>
 
