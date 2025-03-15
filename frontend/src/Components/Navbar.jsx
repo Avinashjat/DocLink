@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { assets } from "../assets/assets";
 import { NavLink, useNavigate } from "react-router-dom";
+import { AppContext } from "../Context/AppContext";
 
 function Navbar() {
 
   const navigate = useNavigate();
-
-  const [token , settoken] = useState(true)
-
+  const{token , setToken , userData} = useContext(AppContext)
   const [showMenu , setshowMenu] = useState(false)
+
+
+  const Logout = () =>{
+    setToken(false)
+    localStorage.removeItem('token')
+}
 
   return (
     <>
@@ -40,15 +45,15 @@ function Navbar() {
 
         <div className=" flex justify-center gap-4">
           {
-            token?
-            <div className="flex items-center gap-2 cursor-pointer group relative">  
-                  <img  className="w-9 rounded-full" src={assets.profile_pic} alt="" />
+            token && userData
+           ? <div className="flex items-center gap-2 cursor-pointer group relative">  
+                  <img  className="w-9 rounded-full" src={userData.image? userData.image : assets.profile_pic} alt="" />
                   <img  className="w-3.5 rounded-full" src={assets.dropdown_icon} alt="" />
                   <div className="absolute top-0 right-0 pt-14 text-base font-medium text-gray-600 z-20 hidden group-hover:block">
                     <div className="min-w-48 bg-stone-100 rounded flex flex-col gap-4 p-4 " >
                       <p onClick={()=>{navigate('/my-profile')}}  className="cursor-pointer hover:text-black"> My Profile </p>
                       <p onClick={()=>{navigate('/my-appointement')}}  className="cursor-pointer hover:text-black"> My Appointments </p>
-                      <p onClick={()=>{settoken(false)}} className="cursor-pointer hover:text-black"> Logout </p>
+                      <p onClick={Logout} className="cursor-pointer hover:text-black"> Logout </p>
                     </div>
                   </div>
             </div>
