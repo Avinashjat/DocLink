@@ -45,6 +45,7 @@ const AppAppContextProvider = (props) => {
 
   const value = {
     doctors,
+    getDoctorData,
     currencySymbol,
     token,
     setToken,
@@ -72,10 +73,6 @@ const AppAppContextProvider = (props) => {
 };
 
 export default AppAppContextProvider;
-
-
-
-
 
 // import { createContext, useEffect, useState } from "react";
 // import axios from "axios";
@@ -107,15 +104,15 @@ export default AppAppContextProvider;
 //       setUserData(null);
 //       return;
 //     }
-  
+
 //     try {
 //       console.log("Fetching user data...");
 //       const { data } = await axios.get(`${backendUrl}/api/user/get-profile`, {
 //         headers: { token },
 //       });
-  
+
 //       console.log("User Data API Response:", data);
-  
+
 //       // Fix: Check for 'succes' instead of 'success'
 //       if (data.succes && data.userData) {
 //         setUserData(data.userData);
@@ -128,7 +125,6 @@ export default AppAppContextProvider;
 //       toast.error("Error loading user profile.");
 //     }
 //   };
-  
 
 //   useEffect(() => {
 //     getDoctorData();
