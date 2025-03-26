@@ -19,7 +19,7 @@ function Navbar() {
     <>
 
       <div className="flex justify-between items-center text-sm py-4 mb-5 border-b border-b-gray-500" >
-        <img onClick={()=>{navigate("/")}} className="cursor-pointer w-44" src={assets.logo} alt="" />
+        <img onClick={()=>{navigate("/")}} className="cursor-pointer w-44" src={assets.doc_logo_tras} alt="" />
 
         <ul className="hidden md:flex justify-start items-center font-medium gap-5">
           <NavLink to='/'>
