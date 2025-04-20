@@ -7,8 +7,7 @@ function Dashboard() {
   const { aToken, getDashData, dashData, cancelAppoitment } =
     useContext(AdminContext);
 
-
-    const {formatDate} = useContext(AppContext)
+  const { formatDate } = useContext(AppContext);
 
   useEffect(() => {
     if (aToken) {
@@ -61,14 +60,28 @@ function Dashboard() {
 
           <div className="pt-4 border border-t-0">
             {dashData.latestAppointment.map((item, index) => (
-              <div className="flex items-center px-6 py-3 gap-3 hover:bg-gray-100" key={index}>
-                <img className="rounded-full w-10" src={item.docData.image} alt="" />
+              <div
+                className="flex items-center px-6 py-3 gap-3 hover:bg-gray-100"
+                key={index}
+              >
+                <img
+                  className="rounded-full w-10"
+                  src={item.docData.image}
+                  alt=""
+                />
                 <div className="flex-1 text-sm">
-                  <p className="text-gray-800 font-medium">{item.docData.name}</p>
+                  <p className="text-gray-800 font-medium">
+                    {item.docData.name}
+                  </p>
                   <p className="text-gray-600">{formatDate(item.slotDate)}</p>
                 </div>
                 {item.cancelled ? (
                   <p className="text-red-400 text-xs font-medium">cancelled</p>
+                ) : item.isCompleted ? (
+                  <p className="text-green-500 text-xs font-medium">
+                    {" "}
+                    Completed
+                  </p>
                 ) : (
                   <img
                     onClick={() => {
