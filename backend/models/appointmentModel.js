@@ -42,7 +42,7 @@ const appointmentSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
-  isComoleted: {
+  isCompleted: {
     type: Boolean,
     default: false,
   },

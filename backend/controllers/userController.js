@@ -252,7 +252,7 @@ const cancelAppointment = async (req, res) => {
 
     return res.json({
       success: true,
-      message: "Appointment cancelled successfully!",
+      message: "Appointment cancelled !",
     });
   } catch (error) {
     console.error("Error in cancelAppointment:", error);
