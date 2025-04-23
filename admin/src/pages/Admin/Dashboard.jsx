@@ -86,6 +86,7 @@ function Dashboard() {
                   <img
                     onClick={() => {
                       cancelAppoitment(item._id);
+                      
                     }}
                     className="w-10 cursor-pointer"
                     src={assets.cancel_icon}
