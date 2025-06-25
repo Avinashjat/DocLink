@@ -7,7 +7,10 @@ import doctorModel from "../models/doctorModel.js";
 import appointmentModel from "../models/appointmentModel.js";
 import razorpay from "razorpay";
 import validator from "validator";
+<<<<<<< HEAD
 
+=======
+>>>>>>> e88cafa8949c70a333a3054f3fc3af69fc5344c9
 
 // api to register User
 
