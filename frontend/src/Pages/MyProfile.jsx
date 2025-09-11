@@ -1,12 +1,12 @@
 
-import React, { useContext, useState } from "react";
+import{ useContext, useState } from "react";
 import { AppContext } from "../Context/AppContext";
 import { assets } from "../assets/assets";
 import { toast } from "react-toastify";
 import axios from "axios";
 
 function MyProfile() {
-  const { userData, setUserData, token, backendUrl, loadUserProfileData } = useContext(AppContext);
+  const { userData,  token, backendUrl, loadUserProfileData } = useContext(AppContext);
   const [isEdit, setIsEdit] = useState(false);
   const [image, setImage] = useState(null);
   const [formData, setFormData] = useState({

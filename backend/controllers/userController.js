@@ -1,16 +1,13 @@
 import bcrypt from "bcrypt";
 import userModel from "../models/userModel.js";
 import { v2 as cloudnary } from "cloudinary";
+import validator from 'validator';
+
 
 import jwt from "jsonwebtoken";
 import doctorModel from "../models/doctorModel.js";
 import appointmentModel from "../models/appointmentModel.js";
 import razorpay from "razorpay";
-import validator from "validator";
-<<<<<<< HEAD
-
-=======
->>>>>>> e88cafa8949c70a333a3054f3fc3af69fc5344c9
 
 // api to register User
 
@@ -118,7 +115,7 @@ const updateProfile = async (req, res) => {
 
     if (imageFile) {
       // Upload image to Cloudinary using Buffer (not file path)
-      const imageUpload = await cloudnary.uploader.upload_stream(
+      const imageUpload =  cloudnary.uploader.upload_stream(
         { folder: "profile_images" },
         async (error, result) => {
           if (error) {

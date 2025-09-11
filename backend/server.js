@@ -7,12 +7,6 @@ import connectCloudinary from './config/cloudinary.js';
 import adminRouter from './routes/adminRoute.js'
 import doctorRouter from './routes/doctorRoute.js';
 import userRouter from './routes/userRoute.js';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 
 // Initialize Express app
@@ -22,14 +16,10 @@ const PORT = process.env.PORT || 4000;
 // Middleware
 app.use(express.json()); 
 app.use(cors()); 
-app.use(express.static(path.join(__dirname, 'build')));
 
 connectDB();
 connectCloudinary()
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 
 app.use('/api/admin' , adminRouter)
