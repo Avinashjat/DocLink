@@ -1,7 +1,7 @@
 # DocLink – Doctor Booking Appointment System 🏥
 
 <p align="center">
-  <img src="public/Doclink-Screenshot.png" alt="DocLink Project Snapshot" width="800"/>
+  <img src="public/frontend/Doclink-Screenshot.png" alt="DocLink Project Snapshot" width="800"/>
 </p>
 
 DocLink is a **full-stack MERN application** designed to simplify doctor appointment scheduling.  
