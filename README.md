@@ -1,12 +1,15 @@
 # DocLink – Doctor Booking Appointment System 🏥
 
+<p align="center">
+  <img src="project-snapshot.png" alt="DocLink Project Snapshot" width="800"/>
+</p>
+
 DocLink is a **full-stack MERN application** designed to simplify doctor appointment scheduling.  
 It provides a **user-friendly portal** for patients to book appointments and an **admin panel** for managing doctors, patients, and schedules.
 
 ---
 
 ## 🚀 Live Demo
-
 - 🌐 **Main Website (User Panel):** [DocLink User Panel](https://doclink-doctor-2gk4.onrender.com)  
 - 🔑 **Admin Panel:** [DocLink Admin Panel](https://doclink-admin-24s9.onrender.com)
 
@@ -15,59 +18,50 @@ It provides a **user-friendly portal** for patients to book appointments and an 
 ## ✨ Features
 
 ### 👩‍⚕️ User Panel
-- User authentication .
-- Profile management with photo, name, and email.
-- Search and book doctor appointments.
-- View, cancel, or reschedule appointment.
-- Mobile-friendly, responsive UI.
+- OTP-based authentication and secure login.  
+- Profile management with photo, name, and email.  
+- Search and book doctor appointments.  
+- View, cancel, or reschedule appointment.  
+- Mobile-friendly, responsive UI.  
 
 ### 🛠 Admin Panel
-- Secure admin login.
-- Manage doctors and their availability.
-- Approve or reject patient appointments.
-- Manage patient records and schedules.
-- Dashboard overview of system activity.
+- Secure admin login.  
+- Manage doctors and their availability.  
+- Approve or reject patient appointments.  
+- Manage patient records and schedules.  
+- Dashboard overview of system activity.  
 
 ---
 
 ## 🛠 Tech Stack
 
-**Frontend (User + Admin)**
-- React.js + Vite
-- Context Api
-- Javascript
-- Tailwind CSS (UI styling)
+**Frontend (User + Admin)**  
+- React.js + Vite  
+- Context API  
+- JavaScript  
+- Tailwind CSS (UI styling)  
 
-**Backend**
-- Node.js + Express.js
-- MongoDB + Mongoose
-- JWT Authentication
-- Multer + Cloudinary (image uploads)
+**Backend**  
+- Node.js + Express.js  
+- MongoDB + Mongoose  
+- JWT Authentication  
+- Multer + Cloudinary (image uploads)  
 
-**Other Tools**
-- Render (deployment)
-- Git & GitHub (version control)
+**Other Tools**  
+- Render (deployment)  
+- Git & GitHub (version control)  
 
 ---
 
 ## ⚙️ Installation & Setup
 
-### 1. Clone the Repository
+Clone the repository and install dependencies for backend, user panel, and admin panel.
+
 ```bash
 git clone https://github.com/your-username/doclink.git
 cd doclink
 
+# Backend setup
 cd backend
 npm install
 npm start
-
-
-
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-
-
