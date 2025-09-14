@@ -15,10 +15,10 @@ It provides a **user-friendly portal** for patients to book appointments and an 
 ## ✨ Features
 
 ### 👩‍⚕️ User Panel
-- User authentication (OTP-based login).
+- User authentication .
 - Profile management with photo, name, and email.
 - Search and book doctor appointments.
-- View, cancel, or reschedule appointments.
+- View, cancel, or reschedule appointment.
 - Mobile-friendly, responsive UI.
 
 ### 🛠 Admin Panel
@@ -34,7 +34,8 @@ It provides a **user-friendly portal** for patients to book appointments and an 
 
 **Frontend (User + Admin)**
 - React.js + Vite
-- Redux Toolkit (state management)
+- Context Api
+- Javascript
 - Tailwind CSS (UI styling)
 
 **Backend**
