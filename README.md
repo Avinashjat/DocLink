@@ -66,6 +66,17 @@ cd backend
 npm install
 npm start
 
+# User panel setup
+cd frontend
+npm install
+npm run dev
+
+# Admin panel setup
+cd admin
+npm install
+npm run dev
+
+Create a .env file inside the backend folder with the following values:
 
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
