@@ -10,12 +10,13 @@ import Appointement from './Pages/Appointement'
 import MyProfile from './Pages/MyProfile'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
-
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
   return (
     < >
     <div className='mx-4 sm:mx-[10%]'>
+      <ToastContainer />
 
    <Navbar />
       
