@@ -1,7 +1,7 @@
 # DocLink – Doctor Booking Appointment System 🏥
 
 <p align="center">
-  <img src="public/frontend/Doclink-Screenshot.png" alt="DocLink Project Snapshot" width="800"/>
+  <!-- <img src="public/frontend/Doclink-Screenshot.png" alt="DocLink Project Snapshot" width="800"/> -->
   <img src="frontend/public/Doclink-Screenshot.png" alt="DocLink Project Snapshot" width="800"/>
 </p>
 
