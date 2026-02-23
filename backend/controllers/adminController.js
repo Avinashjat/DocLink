@@ -1,9 +1,11 @@
 import validator from "validator";
 import bcrypt from "bcrypt";
 import { v2 as cloudinary } from "cloudinary";
+import uploadImageToCloudinary from "../utils/cloudinaryUpload.js";
 import doctorModel from "../models/doctorModel.js";
 import jwt from "jsonwebtoken";
 import appointmentModel from "../models/appointmentModel.js";
+
 import userModel from "../models/userModel.js";
 
 const addDoctor = async (req, res) => {
@@ -58,10 +60,8 @@ const addDoctor = async (req, res) => {
       return res.json({ success: false, message: "Please upload an image" });
     }
 
-    // Upload image to Cloudinary
-    const imageUpload = await cloudinary.uploader.upload(imageFile.path, {
-      resource_type: "image",
-    });
+    // Upload image to Cloudinary (memory storage)
+    const imageUpload = await uploadImageToCloudinary(imageFile.buffer);
     const imageUrl = imageUpload.secure_url;
 
     // Parse address correctly

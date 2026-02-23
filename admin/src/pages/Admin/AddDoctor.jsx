@@ -1,8 +1,8 @@
-import React, { useState ,useContext } from "react";
+import React, { useState, useContext } from "react";
 import { assets } from "../../assets/assets";
 import { AdminContext } from "../../context/AdminContext";
 import { toast } from "react-toastify";
-import axios from 'axios'
+import axios from "axios";
 
 function AddDoctor() {
   const [docImg, setDocImg] = useState(false);
@@ -21,16 +21,27 @@ function AddDoctor() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     try {
       if (!docImg) {
         return toast.error("Image Not Selected");
       }
-  
-      if (!name || !email || !password || !experience || !fees || !about || !speciality || !degree || !address1 || !address2) {
+
+      if (
+        !name ||
+        !email ||
+        !password ||
+        !experience ||
+        !fees ||
+        !about ||
+        !speciality ||
+        !degree ||
+        !address1 ||
+        !address2
+      ) {
         return toast.error("Please fill all the fields!");
       }
-  
+
       const formData = new FormData();
       formData.append("image", docImg);
       formData.append("name", name);
@@ -41,30 +52,35 @@ function AddDoctor() {
       formData.append("about", about);
       formData.append("speciality", speciality);
       formData.append("degree", degree);
-      formData.append("address",JSON.stringify({line1:address1 , line2:address2}));
-      
-  
-    
-      const { data } = await axios.post(backendUrl + "/api/admin/add-doctor", formData, {
-        headers: {aToken },
-      });
-  
+      formData.append(
+        "address",
+        JSON.stringify({ line1: address1, line2: address2 }),
+      );
+
+      const { data } = await axios.post(
+        backendUrl + "/api/admin/add-doctor",
+        formData,
+        {
+          headers: {
+          aToken: aToken,   // keep token
+    },
+        },
+      );
+
       if (data.success) {
         toast.success(data.message);
-         
-      setDocImg(false);
-      setName("");
-      setEmail("");
-      setPassword("");
-      
-      setFees("");
-      setAbout("");
-    
-      setDegree("");
-      setAddress1("");
-      setAddress2("");
 
+        setDocImg(false);
+        setName("");
+        setEmail("");
+        setPassword("");
 
+        setFees("");
+        setAbout("");
+
+        setDegree("");
+        setAddress1("");
+        setAddress2("");
       } else {
         toast.error(data.message);
       }
@@ -73,8 +89,7 @@ function AddDoctor() {
       toast.error(error.response?.data?.message || "Something went wrong");
     }
   };
-  
-  
+
   return (
     <form onSubmit={handleSubmit} className="m-5 w-full">
       <p className="mb-3 text-lg font-medium"> Add Doctor</p>
@@ -168,6 +183,12 @@ function AddDoctor() {
                 <option value="10 Year">10 Year</option>
                 <option value="11 Year">11 Year</option>
                 <option value="12 Year">12 Year</option>
+                <option value="13 Year">13 Year</option>
+                <option value="14 Year">14 Year</option>
+                <option value="15 Year">15 Year</option>
+                <option value="16 Year">16 Year</option>
+                <option value="17Year">17 Year</option>
+                <option value="18 Year">18 Year</option>
               </select>
             </div>
 
@@ -198,12 +219,21 @@ function AddDoctor() {
                 name=""
                 id="doc-speciality"
               >
-                <option value="General physician">General physician</option>
+                <option value="General Physician">General Physician</option>
                 <option value="Gynecologist">Gynecologist</option>
                 <option value="Dermatologist">Dermatologist</option>
-                <option value="Pediatricians">Pediatricians</option>
+                <option value="Pediatrician">Pediatrician</option>
                 <option value="Neurologist">Neurologist</option>
+                <option value="Dentist">Dentist</option>
                 <option value="Gastroenterologist">Gastroenterologist</option>
+                <option value="Cardiologist">Cardiologist</option>
+                <option value="Orthopedic">Orthopedic</option>
+                <option value="ENT Specialist">ENT Specialist</option>
+                <option value="Ophthalmologist">Ophthalmologist</option>
+                <option value="Psychiatrist">Psychiatrist</option>
+                <option value="Pulmonologist">Pulmonologist</option>
+                <option value="Urologist">Urologist</option>
+                <option value="General Surgeon">General Surgeon</option>
               </select>
             </div>
 
