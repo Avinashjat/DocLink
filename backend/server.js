@@ -23,10 +23,15 @@ app.use(express.json());
 // CORS Configuration (Production Safe)
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://doclink-admin-ou9e.onrender.com",
+      "https://doclink-6a1w.onrender.com/",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-  })
+  }),
 );
 
 // Handle Preflight Requests
