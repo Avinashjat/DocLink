@@ -1,12 +1,12 @@
-
-import{ useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { AppContext } from "../Context/AppContext";
 import { assets } from "../assets/assets";
 import { toast } from "react-toastify";
 import axios from "axios";
 
 function MyProfile() {
-  const { userData,  token, backendUrl, loadUserProfileData } = useContext(AppContext);
+  const { userData, token, backendUrl, loadUserProfileData } =
+    useContext(AppContext);
   const [isEdit, setIsEdit] = useState(false);
   const [image, setImage] = useState(null);
   const [formData, setFormData] = useState({
@@ -49,9 +49,13 @@ function MyProfile() {
       updatedFormData.append("dob", formData.dob);
       if (image) updatedFormData.append("image", image);
 
-      const { data } = await axios.post(backendUrl + "/api/user/update-profile", updatedFormData, {
-        headers: { token },
-      });
+      const { data } = await axios.post(
+        backendUrl + "/api/user/update-profile",
+        updatedFormData,
+        {
+          headers: { token },
+        },
+      );
 
       if (data.success) {
         toast.success(data.message);
@@ -94,7 +98,11 @@ function MyProfile() {
               src={image ? URL.createObjectURL(image) : userData.image}
               alt="Profile"
             />
-            <img className="w-10 absolute bottom-12 right-12" src={assets.upload_icon} alt="" />
+            <img
+              className="w-10 absolute bottom-12 right-12"
+              src={assets.upload_icon}
+              alt=""
+            />
           </div>
           <input type="file" id="image" hidden onChange={handleImageChange} />
         </label>
@@ -112,7 +120,9 @@ function MyProfile() {
           onChange={handleChange}
         />
       ) : (
-        <p className="font-medium text-3xl text-neutral-800 mt-4">{userData.name}</p>
+        <p className="font-medium text-3xl text-neutral-800 mt-4">
+          {userData.name}
+        </p>
       )}
 
       <hr className="bg-zinc-400 h-[1px] border-none" />
@@ -157,8 +167,12 @@ function MyProfile() {
             </div>
           ) : (
             <div>
-              <p className="text-gray-500">{userData.address?.line1 || "N/A"}</p>
-              <p className="text-gray-500">{userData.address?.line2 || "N/A"}</p>
+              <p className="text-gray-500">
+                {userData.address?.line1 || "N/A"}
+              </p>
+              <p className="text-gray-500">
+                {userData.address?.line2 || "N/A"}
+              </p>
             </div>
           )}
         </div>
@@ -224,6 +238,3 @@ function MyProfile() {
 }
 
 export default MyProfile;
-
-
-
