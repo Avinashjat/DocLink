@@ -11,8 +11,8 @@ It provides a **user-friendly portal** for patients to book appointments and an 
 ---
 
 ## 🚀 Live Demo
-- 🌐 **Main Website (User Panel):** [DocLink User Panel](https://doclink-doctor-2gk4.onrender.com)  
-- 🔑 **Admin Panel:** [DocLink Admin Panel](https://doclink-admin-24s9.onrender.com)
+- 🌐 **Main Website (User Panel):** [DocLink User Panel](https://doclink-6a1w.onrender.com)  
+- 🔑 **Admin Panel:** [DocLink Admin Panel](https://doclink-admin-ou9e.onrender.com)
 
 ---
 
